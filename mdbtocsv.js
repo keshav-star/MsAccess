@@ -25,10 +25,11 @@ for (let i = 0; i < filteredData.length; i++) {
     for (const [key, value] of Object.entries(filteredData[i])) {
         formattedItem[`${key}`] = `${value}`;
     }
-    formattedJSON[i] = formattedItem;
+    formattedJSON[result[i].T_ID] = formattedItem;
+    console.log(result[i].WB_Location_ID)
   }
   let newResult = {};
-  newResult["API_DATA"] = formattedJSON;
+  newResult[result[0].WB_Location_ID] = formattedJSON;
 
 console.log(newResult);
 // console.log(result);
